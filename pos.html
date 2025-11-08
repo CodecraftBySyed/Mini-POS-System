@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <title>POS - Mini POS</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/pos.svg" alt="Codecraft Logo" class="w-10 h-10 rounded-full"/>
+        <h1 class="text-2xl font-bold text-indigo-600">Mini POS</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex space-x-1 overflow-x-auto">
+        <a href="index.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">Dashboard</a>
+        <a href="products.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">Products</a>
+        <a href="pos.html" class="px-4 py-3 text-indigo-600 border-b-2 border-indigo-600 font-medium whitespace-nowrap">POS</a>
+        <a href="reports.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">Reports</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Products Grid -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+          <div class="p-6 border-b border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-900">Products</h2>
+          </div>
+          <div class="p-6">
+            <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 sticky top-32">
+          <div class="p-6 border-b border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-900">Cart</h2>
+          </div>
+          <div class="p-6">
+            <div id="cartItems" class="space-y-3 mb-4 max-h-64 overflow-y-auto"></div>
+            
+            <div class="border-t border-gray-200 pt-4 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Items:</span>
+                <span class="font-medium" id="itemCount">0</span>
+              </div>
+              
+              <!-- Discount Section -->
+              <div class="flex items-center space-x-2">
+                <div class="flex-1">
+                  <label class="text-sm text-gray-600">Discount</label>
+                  <input type="number" id="discountValue" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter value">
+                </div>
+                <div class="w-32">
+                  <label class="text-sm text-gray-600">Type</label>
+                  <select id="discountType" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    <option value="flat">Flat (₹)</option>
+                    <option value="percent">Percent (%)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="flex justify-between text-sm text-gray-600">
+                <span>Subtotal:</span>
+                <span id="subtotal">₹0.00</span>
+              </div>
+              <div class="flex justify-between text-sm text-gray-600">
+                <span>Discount:</span>
+                <span id="discountAmount">-₹0.00</span>
+              </div>
+              <div class="flex justify-between text-lg font-bold">
+                <span>Total:</span>
+                <span id="grandTotal">₹0.00</span>
+              </div>
+            </div>
+
+            <div class="mt-4 space-y-2">
+              <div class="grid grid-cols-2 gap-2">
+                <button id="checkoutBtn" class="bg-indigo-600 text-white rounded-lg px-4 py-3 font-medium hover:bg-indigo-700">Quick Checkout</button>
+                <button id="printBillBtn" class="bg-green-600 text-white rounded-lg px-4 py-3 font-medium hover:bg-green-700">Print Bill</button>
+              </div>
+              <button id="clearCart" class="w-full border border-gray-300 rounded-lg px-4 py-2 font-medium hover:bg-gray-50">Clear Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-8">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex flex-col items-center justify-center space-y-3">
+        <a href="https://codecraftbysyed-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" title="Codecraft by Syed">
+          <img src="images/logo.svg" alt="Codecraft Logo" class="w-12 h-12 rounded-full hover:opacity-90"/>
+        </a>
+        <p class="text-gray-600">&copy; 2025 Codecraft by Syed</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/shared.js"></script>
+  <script type="module" src="js/pos.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <title>Reports - Mini POS</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    @media print {
+      body * { visibility: hidden; }
+      #print-area, #print-area * { visibility: visible; }
+      #print-area { position: absolute; inset: 0; padding: 16px; }
+      @page { size: A4; margin: 12mm; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 no-print">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/pos.svg" alt="Codecraft Logo" class="w-10 h-10 rounded-full"/>
+        <h1 class="text-2xl font-bold text-indigo-600">Mini POS</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b sticky top-16 z-40 no-print">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex space-x-1 overflow-x-auto">
+        <a href="index.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">Dashboard</a>
+        <a href="products.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">Products</a>
+        <a href="pos.html" class="px-4 py-3 text-gray-600 hover:text-gray-900 whitespace-nowrap">POS</a>
+        <a href="reports.html" class="px-4 py-3 text-indigo-600 border-b-2 border-indigo-600 font-medium whitespace-nowrap">Reports</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+      <div class="p-6 border-b border-gray-100">
+        <h2 class="text-xl font-semibold text-gray-900">Sales Reports</h2>
+      </div>
+
+      <!-- Filters & Actions -->
+      <div class="p-6 border-b border-gray-100 bg-gray-50 no-print">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">From Date</label>
+            <input id="fromDate" type="date" class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">To Date</label>
+            <input id="toDate" type="date" class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+          </div>
+          <div class="flex items-end">
+            <button id="exportCsv" class="w-full border border-gray-300 rounded-lg px-4 py-2 font-medium hover:bg-gray-50">Export CSV</button>
+          </div>
+          <div class="flex items-end">
+            <button id="printPdf" class="w-full bg-indigo-600 text-white rounded-lg px-4 py-2 font-medium hover:bg-indigo-700">Print PDF</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="p-6 border-b border-gray-100">
+        <div id="reportSummary" class="text-gray-600"></div>
+      </div>
+
+      <!-- Table -->
+      <div class="p-6 overflow-x-auto">
+        <div id="reportTable"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Hidden print area -->
+  <div id="print-area" style="display:none"></div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-8">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex flex-col items-center justify-center space-y-3">
+        <a href="https://codecraftbysyed-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" title="Codecraft by Syed">
+          <img src="images/logo.svg" alt="Codecraft Logo" class="w-12 h-12 rounded-full hover:opacity-90"/>
+        </a>
+        <p class="text-gray-600">&copy; 2025 Codecraft by Syed</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/shared.js"></script>
+  <script type="module" src="js/reports.js"></script>
+</body>
+</html>
