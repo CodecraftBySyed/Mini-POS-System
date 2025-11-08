@@ -1,113 +1,158 @@
-# 🏪 Mini POS System
+# Mini POS System
+
+A clean, modern, and lightweight Point of Sale application built with **Vanilla JavaScript** and **Tailwind CSS**, designed for small businesses, personal projects, and portfolio showcases. This project emphasizes simplicity, speed, and expressive UI design.
 
 <div align="center">
 
-[![Made by Codecraft](https://img.shields.io/badge/Made%20by-Codecraft%20by%20Syed-blue)](https://codecraftbysyed-portfolio.vercel.app/)
-[![Built with Tailwind](https://img.shields.io/badge/Built%20with-Tailwind%20CSS-38B2AC)](https://tailwindcss.com)
-[![Vanilla JS](https://img.shields.io/badge/Vanilla-JavaScript-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Built with Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Live Demo](https://craftbysyed-portfolio.vercel.app) | [Portfolio](https://codecraftbysyed-portfolio.vercel.app/)
-
-A lightweight, elegant Point of Sale system built with pure JavaScript and Tailwind CSS.
-
-This is a "vibe coding" project — built for fun, experimentation, and expressive UI work.
+[Live Demo](https://craftbysyed-portfolio.vercel.app) • [Portfolio](https://codecraftbysyed-portfolio.vercel.app/)
 
 </div>
-
-## ✨ Features
-
-- 💼 **Product Management** - Add, edit, and organize your inventory
-- 🛒 **POS Interface** - Smooth, intuitive point-of-sale experience
-- 📊 **Reporting** - Track sales and analyze performance
-- 💸 **Indian Rupee (₹)** - Fully configured for Indian currency
-- 🚀 **Offline Support** - Works without internet via Service Worker
-- 🎨 **Modern UI** - Clean interface styled with Tailwind CSS
-
-## 📥 Download
-
-You can provide a downloadable ZIP of the app (for example `mini-pos.zip`) under your portfolio or releases. A download button has been added to the app header and points to:
-
-`download/`
-
-Replace the URL above with your actual release or ZIP location.
-
-## Branding
-This fork/app is branded "Codecraft by Syed". The footer and header show the brand name and a round logo (`images/logo.svg`).
-
-## Currency
-All displayed currency values now use the Indian Rupee symbol (₹). The codebase replaces previous `$` signs with `₹` in the UI and templates.
-
-Files updated for currency:
-- `index.html` (dashboard totals default set to `₹0.00`)
-- `pos.html` (grand total default set to `₹0.00`)
-- `products.html` (price label shows `Price (₹)`)
-- JS files: `js/pos.js`, `pos.js`, `js/products.js`, `js/reports.js`, `js/dashboard.js` — replaced `$` currency prefixes with `₹` in UI templates and summaries.
-
-Notes for developers:
-- Currency parsing/serialization: the app strips the first character when reading totals (e.g. `grandTotalEl.textContent.slice(1)`) so using a single-character currency symbol like `₹` keeps that logic working. If you change parsing logic later, update these slices accordingly.
-
-## Screenshots
-Placeholder screenshots are included in `images/screenshots/`:
-- `images/screenshots/screenshot-1.svg` — Dashboard (placeholder)
-- `images/screenshots/screenshot-2.svg` — POS / Cart (placeholder)
-- `images/screenshots/screenshot-3.svg` — Products list (placeholder)
-
-
-
-## Local development
-This project uses locally compiled Tailwind CSS. To rebuild or watch CSS changes:
-
-Install (already done in this workspace):
-
-```powershell
-npm install
-```
-
-Build once (produces `css/style.css`):
-
-```powershell
-npx tailwindcss -i ./src/input.css -o ./css/style.css --minify
-```
-
-Watch mode (rebuilds on change):
-
-```powershell
-npm run dev
-```
-
-Open the app (for example) with Live Server or a static server at `http://127.0.0.1:5500/`.
-
-## Service worker / CORS note
-The service worker previously attempted to cache the Tailwind CDN URL which caused a CORS fetch failure. The worker now only caches local assets and is resilient to individual asset cache failures. If you see old SW behavior, unregister the service worker in DevTools and reload.
-
-## How to replace the logo
-Replace `images/logo.svg` with your final logo (keep the filename or update `index.html`/footers accordingly). The UI expects a round logo (uses `rounded-full` class) — square or circular SVG/PNG works fine.
-
-## 👨‍💻 About the Creator
-
-<div align="center">
-
-### Codecraft by Syed
-
-[🌐 Portfolio](https://codecraftbysyed-portfolio.vercel.app/) | [💼 LinkedIn](#) | [🐙 GitHub](#)
-
-Creating elegant web solutions with a focus on user experience and clean code.
-
-</div>
-
-## 📝 License
-
-This project is [MIT](LICENSE) licensed.
 
 ---
 
+## Features
+
+* Product inventory management
+* Minimal and intuitive POS interface
+* Sales reporting and analytics
+* Full Indian Rupee (₹) support
+* Offline functionality with Service Worker
+* Tailwind CSS–powered modern interface
+* Branding support (custom logo and name)
+
+---
+
+## Branding: Codecraft by Syed
+
+This build includes custom branding:
+
+* Header and footer display **Codecraft by Syed**
+* Round logo stored at `images/logo.svg`
+* Easily replaceable (see "Replacing the logo")
+
+---
+
+## Currency: Indian Rupee (₹)
+
+All UI currency indicators use **₹**. Instances of `$` in both HTML and JS are replaced accordingly.
+
+Updated files include:
+
+* `index.html`
+* `pos.html`
+* `products.html`
+* `js/pos.js`
+* `js/products.js`
+* `js/reports.js`
+* `js/dashboard.js`
+
+Note: Currency parsing uses `.slice(1)` to remove the symbol. If switching to a multi-character symbol, update the parse logic.
+
+---
+
+## Screenshots
+
+Placeholder previews are stored in `images/screenshots/`:
+
+* Dashboard — `screenshot-1.svg`
+* POS / Cart — `screenshot-2.svg`
+* Product List — `screenshot-3.svg`
+
+Replace with real screenshots when available.
+
+---
+
+## Download
+
+A ZIP download button is included in the UI. Point it to your actual release file:
+
+```
+download/
+```
+
+Update this path based on your deployment or hosting setup.
+
+---
+
+## Local Development
+
+This repo uses locally compiled Tailwind CSS.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Build once:
+
+```bash
+npx tailwindcss -i ./src/input.css -o ./css/style.css --minify
+```
+
+Watch mode:
+
+```bash
+npm run dev
+```
+
+Start a local server (e.g., Live Server) and open:
+
+```
+http://127.0.0.1:5500/
+```
+
+---
+
+## Service Worker Notice
+
+The service worker previously failed when attempting to cache CDN-based Tailwind assets. It now caches only local resources and gracefully handles failures.
+
+If outdated caching appears:
+
+1. Open DevTools
+2. Unregister the service worker
+3. Hard reload
+
+---
+
+## Replacing the Logo
+
+To customize branding:
+
+1. Replace `images/logo.svg` with your new file.
+2. Keep the same filename, or update references in `index.html`, footers, and headers.
+
+Round assets display best due to Tailwind's `rounded-full` styling.
+
+---
+
+## About the Creator
+
 <div align="center">
 
-Made with ❤️ by [Codecraft by Syed](https://codecraftbysyed-portfolio.vercel.app/)
+**Codecraft by Syed**
 
-**[⬆ Back to Top](#-mini-pos-system)**
+[Portfolio](https://codecraftbysyed-portfolio.vercel.app/) • LinkedIn • GitHub
+
+Building clean, intuitive, and efficient web tools.
 
 </div>
 
+---
 
+## License
+
+Licensed under the **MIT License**.
+
+<div align="center">
+
+Made by Codecraft by Syed
+
+[Back to top](#mini-pos-system)
+
+</div>
