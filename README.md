@@ -8,7 +8,7 @@ A clean, modern, and lightweight Point of Sale application built with **Vanilla 
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Live Demo](https://craftbysyed-portfolio.vercel.app) • [Portfolio](https://codecraftbysyed-portfolio.vercel.app/)
+[Live Demo](https://mini-pos-system-ccbs.netlify.app/) • [Portfolio](https://codecraftbysyed-portfolio.vercel.app/)
 
 </div>
 
@@ -69,13 +69,7 @@ Replace with real screenshots when available.
 
 ---
 
-## Download
 
-A ZIP download button is included in the UI. Point it to your actual release file:
-
-```
-download/
-```
 
 Update this path based on your deployment or hosting setup.
 
@@ -159,4 +153,5 @@ Made by Codecraft by Syed
 [Back to top](#mini-pos-system)
 
 </div>
+
 
