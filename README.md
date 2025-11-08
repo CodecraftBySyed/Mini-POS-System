@@ -53,7 +53,7 @@ Placeholder screenshots are included in `images/screenshots/`:
 - `images/screenshots/screenshot-2.svg` — POS / Cart (placeholder)
 - `images/screenshots/screenshot-3.svg` — Products list (placeholder)
 
-Replace these with real PNG/SVG screenshots by saving files into that folder and committing.
+
 
 ## Local development
 This project uses locally compiled Tailwind CSS. To rebuild or watch CSS changes:
@@ -109,4 +109,5 @@ Made with ❤️ by [Codecraft by Syed](https://codecraftbysyed-portfolio.vercel
 **[⬆ Back to Top](#-mini-pos-system)**
 
 </div>
+
 
