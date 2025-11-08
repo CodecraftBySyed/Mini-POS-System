@@ -58,9 +58,12 @@ Note: Currency parsing uses `.slice(1)` to remove the symbol. If switching to a 
 
 Placeholder previews are stored in `images/screenshots/`:
 
-* Dashboard — `screenshot-1.svg`
-* POS / Cart — `screenshot-2.svg`
-* Product List — `screenshot-3.svg`
+* Dashboard — 
+![Dashboard](images/screenshots/screenshot-1.png)
+* POS / Cart — 
+![POS Screen](images/screenshots/screenshot-2.png)
+* Product List — 
+![Product List](images/screenshots/screenshot-3.png)
 
 Replace with real screenshots when available.
 
@@ -156,3 +159,4 @@ Made by Codecraft by Syed
 [Back to top](#mini-pos-system)
 
 </div>
+
